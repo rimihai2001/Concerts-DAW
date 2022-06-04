@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('src/app/modules/bands/bands.module').then((m) => m.BandsModule),
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        loadChildren: () =>
+          import('src/app/modules/bands/bands.module').then(
+            (m) => m.BandsModule
+          ),
+      },
+    ],
   },
   {
     path: 'login',
