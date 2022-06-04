@@ -66,6 +66,7 @@ namespace DAW_Backend.Controllers
         }
 
         [HttpGet("Get-join")]
+        [Authorize("Admin")]
         public async Task<IActionResult> GetAddressJoin()
         {
             var address = await _context.Addresses.Include(x => x.Location).ToListAsync();
@@ -75,6 +76,7 @@ namespace DAW_Backend.Controllers
         }
 
         [HttpGet("Get-order-by")]
+        [Authorize("Admin")]
         public async Task<IActionResult> GetAddressOrderBy()
         {
             var address = await _context.Addresses.Include(x => x.Location).OrderByDescending(x => x.StreetNumber).ToListAsync();
