@@ -1,0 +1,15 @@
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\DAW_Backend.BLL.deps.json
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\DAW_Backend.BLL.dll
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\ref\DAW_Backend.BLL.dll
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\DAW_Backend.BLL.pdb
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\DAW_Backend.DAL.dll
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\bin\Debug\net5.0\DAW_Backend.DAL.pdb
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.csproj.AssemblyReference.cache
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.AssemblyInfoInputs.cache
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.AssemblyInfo.cs
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.csproj.CopyComplete
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.dll
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\ref\DAW_Backend.BLL.dll
+C:\Users\Radu Mihai\Documents\Radu\Proiect DAW\Backend\DAW_Backend\DAW_Backend.BLL\obj\Debug\net5.0\DAW_Backend.BLL.pdb
