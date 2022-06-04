@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BandsService } from 'src/app/services/bands.service';
 import { DataService } from 'src/app/services/data.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-bands',
@@ -12,9 +13,12 @@ import { DataService } from 'src/app/services/data.service';
 export class BandsComponent implements OnInit, OnDestroy {
   public subscription: Subscription;
   public loggedUser;
+  public parentMessage = 'message from parent';
   public Bands = [];
   public displayedColumns = ['id', 'bandName', 'musicGenre', 'yearFounded']
-  public parentMessage = 'message from parent';
+  
+
+
   constructor(
     private router: Router,
     private dataService: DataService,
