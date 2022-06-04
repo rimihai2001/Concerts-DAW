@@ -1,6 +1,7 @@
 ﻿using DAW_Backend.DAL;
 using DAW_Backend.DAL.Entities;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
@@ -62,6 +63,14 @@ namespace DAW_Backend.Controllers
                 }).ToList();
 
             return Ok(years);
+        }
+        [HttpGet("Get-select")]
+        public async Task<IActionResult>  GetBandSelect()
+        {
+            var bands = await _context.Bands.Select(x => new { Id = x.Id, bandName = x.BandName, musicGenre = x.MusicGenre, yearFounded = x.YearFounded }).ToListAsync();
+
+            return Ok(bands);
+
         }
 
 

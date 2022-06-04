@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BandsService } from 'src/app/services/bands.service';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -11,12 +12,25 @@ import { DataService } from 'src/app/services/data.service';
 export class BandsComponent implements OnInit, OnDestroy {
   public subscription: Subscription;
   public loggedUser;
+  public Bands = [];
+  public displayedColumns = ['id', 'bandName', 'musicGenre', 'yearFounded']
   public parentMessage = 'message from parent';
-  constructor(private router: Router, private dataService: DataService) {}
+  constructor(
+    private router: Router,
+    private dataService: DataService,
+    private bandsService: BandsService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.dataService.currentUser.subscribe(
       (user) => (this.loggedUser = user)
+    );
+    this.bandsService.getBands().subscribe(
+      (result) => {
+        console.log(result);
+        this.Bands = result;
+      },
+      (error) => console.error(error)
     );
   }
   ngOnDestroy() {
