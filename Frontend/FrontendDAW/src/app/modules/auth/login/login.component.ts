@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private router: Router) {}
+  constructor(private router: Router, private dataService: DataService) {}
 
   get username(): AbstractControl {
     return this.loginForm.get('username');
@@ -25,6 +26,7 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   public login(): void {
+    this.dataService.changeDataUser(this.loginForm.value);
     localStorage.setItem('Role', 'Admin');
     this.router.navigate(['/bands']);
   }
