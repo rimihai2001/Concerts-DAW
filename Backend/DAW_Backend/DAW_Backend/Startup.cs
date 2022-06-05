@@ -38,7 +38,7 @@ namespace DAW_Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddCors();
             services.AddControllers().AddNewtonsoftJson(options => 
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ConnString")));
@@ -99,15 +99,6 @@ namespace DAW_Backend
                 opt.AddPolicy("Admin", policy => policy.RequireRole("Admin").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
                 opt.AddPolicy("User", policy => policy.RequireRole("User").RequireAuthenticatedUser().AddAuthenticationSchemes("AuthScheme").Build());
             });
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(name: "_allowSpecificOrigins",
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:4200/bands", "localhost:4200", "http://localhost:4200/").AllowAnyMethod().AllowAnyHeader();
-                    });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -121,9 +112,14 @@ namespace DAW_Backend
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DAW_Backend v1"));
             }
 
-            app.UseCors("AllowAnyCorsPolicy");
-
             app.UseHttpsRedirection();
+
+            app.UseCors(builder => builder
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()
+                .WithOrigins("http://localhost:4200")
+            );
 
             app.UseRouting();
 
