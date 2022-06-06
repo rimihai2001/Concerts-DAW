@@ -13,7 +13,21 @@ export class BandsService {
     return this.http.get(`${this.url}/Get-select`);
   }
 
-  // public getStudentById(id): Observable<Band> {
-  //   return this.http.get<any>(`${this.url}/byId/${id}`);
-  // }
+  public getBandById(id): Observable<any> {
+    return this.http.get<any>(`${this.url}/Get/${id}`);
+  }
+
+
+  public deleteBand(id): Observable<any> {
+    
+    return this.http.delete<any>(`${this.url}/${id}` );
+  }
+
+  public addBand(band): Observable<any>{
+    return this.http.post(`${this.url}/AddBand`, band);
+  }
+
+  public editband(band): Observable<any>{
+    return this.http.put(this.url, band);
+  }
 }

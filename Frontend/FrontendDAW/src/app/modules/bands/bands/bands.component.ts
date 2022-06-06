@@ -15,7 +15,7 @@ export class BandsComponent implements OnInit, OnDestroy {
   public loggedUser;
   public parentMessage = 'message from parent';
   public Bands = [];
-  public displayedColumns = ['id', 'bandName', 'musicGenre', 'yearFounded']
+  public displayedColumns = ['id', 'bandName', 'musicGenre', 'yearFounded', 'edit', 'delete']
   
 
 
